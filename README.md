@@ -18,4 +18,6 @@ https://www.microsoft.com/net
 
 Go here:
  VS2013:  http://stackoverflow.com/questions/19448343/enable-wix-project-in-visual-studio-2013     
- VS2015:  http://stackoverflow.com/questions/26110643/how-to-enable-wix-projects-in-visual-studio-2015
+ VS2015:  http://stackoverflow.com/questions/26110643/how-to-enable-wix-projects-in-visual-studio-2015    
+ 
+ 5)now close and reopen the project in solution.
