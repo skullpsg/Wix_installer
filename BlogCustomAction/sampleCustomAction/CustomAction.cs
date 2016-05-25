@@ -31,7 +31,7 @@ namespace sampleCustomAction
             //user validation
             int serviceCredentialStatus = ValidateCredential(session, userName, password);
             session["ISCREDENTIALSSUCCESS"] = Convert.ToString(serviceCredentialStatus);
-            MessageBox.Show("Account:" + session["ACCOUNT"] + "password" + session["MY_PASSWORD"] + "validCredential:" + session["ISCREDENTIALSSUCCESS"]);
+            //MessageBox.Show("Account:" + session["ACCOUNT"] + "password" + session["MY_PASSWORD"] + "validCredential:" + session["ISCREDENTIALSSUCCESS"]);
             
             return ActionResult.Success;
         }
