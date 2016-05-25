@@ -1,0 +1,6 @@
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\WixCustomActionBlogWindowService\bin\Debug\WixCustomActionBlogWindowService.exe.config
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\WixCustomActionBlogWindowService\bin\Debug\WixCustomActionBlogWindowService.exe
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\WixCustomActionBlogWindowService\bin\Debug\WixCustomActionBlogWindowService.pdb
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\WixCustomActionBlogWindowService\obj\Debug\WixCustomActionBlogWindowService.exe
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\WixCustomActionBlogWindowService\obj\Debug\WixCustomActionBlogWindowService.pdb
+C:\Users\vishn_000\Documents\Visual Studio 2013\Projects\BlogCustomAction\WixCustomActionBlogWindowService\obj\Debug\WixCustomActionBlogWindowService.csprojResolveAssemblyReference.cache

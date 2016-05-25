@@ -1,0 +1,2 @@
+C:\Users\vishn_000\Documents\Visual Studio 2013\Projects\BlogCustomAction\BlogCustomAction\bin\Debug\en-us\BlogCustomAction.msi
+C:\Users\vishn_000\Documents\Visual Studio 2013\Projects\BlogCustomAction\BlogCustomAction\bin\Debug\en-us\BlogCustomAction.wixpdb

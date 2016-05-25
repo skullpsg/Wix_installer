@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Fragment>
+
+    <UI>
+      <Dialog Id="UserRegDialog" Width="370" Height="270" Title="AwesomeProduct : User Registration">
+
+        <Control Id="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Default="yes" Text="!(loc.WixUINext)">
+          <Publish Event="DoAction" Value="CheckingUserAvailability" Order="1">1</Publish>
+
+          <Publish Event="SpawnDialog" Value="CustomActionUserValidationDlg" Order="2">
+            <![CDATA[ISCREDENTIALSSUCCESS = 0 OR ISPWDCOMPARESUCCESS=0 or ISCREDENTIALSSUCCESS=3]]>
+          </Publish>
+          <!--No Errors move to next Dialog-->
+          <Publish Event="NewDialog" Value="VerifyReadyDlg" Order="2">
+            <!--if settings are correct, allow next dialog-->
+            <![CDATA[ISCREDENTIALSSUCCESS = 1 And ISPWDCOMPARESUCCESS =1]]>
+          </Publish>
+        </Control>
+        <Control Id="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Text="!(loc.WixUIBack)" />
+
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Cancel="yes" Text="!(loc.WixUICancel)">
+
+          <Publish Event="SpawnDialog" Value="CancelDlg">1</Publish>
+
+        </Control>
+
+        <Control Id="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" TabSkip="no" Text="WixUI_Bmp_Banner" />
+
+        <Control Id="BannerLine" Type="Line" X="0" Y="44" Width="370" Height="0" />
+
+        <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="370" Height="0" />
+
+        <Control Id="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Transparent="yes" NoPrefix="yes" Text="Enter service account details.">
+
+        </Control>
+
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Transparent="yes" NoPrefix="yes" Text="{\\WixUI_Font_Title}Service account" />
+
+        <Control Type="Text" Width="322" Height="26" X="25" Y="56" Id="BodyLabel" Text="Specify the logon account for the AwesomeProduct service." NoPrefix="yes">
+
+        </Control>
+
+        <Control Type="Text" Width="75" Height="15" X="80" Y="98" Id="AccountLabel" TabSkip="no" Text="&amp;Account Name:" />
+        <Control Type="Edit" Width="150" Height="18" X="150" Y="96" Id="AccountTextbox" Property="USERACCOUNT" Text="{80}" Indirect="no"/>
+        <Control Type="Text" Width="150" Height="15" X="150" Y="115" Id="AccountSampleLabel" TabSkip="no" Text="&amp;(Example: .\USERNAME)" />
+
+        <Control Type="Text" Width="75" Height="15" X="80" Y="142" Id="PasswordLabel" TabSkip="no" Text="Pa&amp;ssword:" />
+        <Control Type="Edit" Width="150" Height="18" X="150" Y="140" Id="PasswordTextbox" Property="USERMY_PASSWORD" Text="{80}" Password="yes" Indirect="no"/>
+
+
+
+        <!--<Control Id="ConfirmPasswordServiceLabel" Type="Text" X="80" Y="174" Width="75" Height="15" TabSkip="no" Text="Confirm Pa&amp;ssword:"/>
+        <Control Id="ConfirmPasswordServiceEdit" Type="Edit" X="150" Y="172" Width="150" Height="18" Property="SERVICE_PWD_CONFIRM" Text="{80}"  Password="yes"/>-->
+
+      </Dialog>
+    </UI>
+    <UI>
+
+
+      <Dialog Id="CustomActionUserValidationDlg" Width="220" Height="100" NoMinimize="yes" Title="!(loc.ValidationResultLabel)">
+        <Control Id="ChchtBmpId" Type="Bitmap" X="0" Y="0" Width="220" Height="100" TabSkip="no" Text="WhiteBgBMP"/>
+
+        <!-- User Name /Password check.-->
+        <Control Id="PassUserPwdChkBmpId" Type="Bitmap" X="20" Y="40" Width="12" Height="12" TabSkip="no" Text="PassIcon" Hidden="yes">
+          <Condition Action="show">
+            ISCREDENTIALSSUCCESS = 1
+          </Condition>
+        </Control>
+        <Control Id="FailUserPwdChkBmpId" Type="Bitmap" X="20" Y="40" Width="12" Height="12" TabSkip="no" Text="FailIcon" Hidden="yes">
+          <Condition Action="show">
+            ISCREDENTIALSSUCCESS&lt;&gt;1
+          </Condition>
+        </Control>
+        <Control Id="UserPwdChkLabel" Type="Text" X="45" Y="40" Width="220" Height="15" TabSkip="no" Text="!(loc.UserPwdCheckLabel)" Transparent="yes" />
+
+        <!-- Password Compare check.-->
+        <!--<Control Id="PassPasswordCompareBmpId" Type="Bitmap" X="20" Y="20" Width="12" Height="12" TabSkip="no" Text="PassIcon" Hidden="yes">
+          <Condition Action="show">
+            ISPWDCOMPARESUCCESS = 1
+          </Condition>
+        </Control>
+        <Control Id="FailPasswordCompareBmpId" Type="Bitmap" X="20" Y="20" Width="12" Height="12" TabSkip="no" Text="FailIcon" Hidden="yes">
+          <Condition Action="show">
+            ISPWDCOMPARESUCCESS = 0
+          </Condition>
+        </Control>
+        <Control Id="PasswordCompareLabel" Type="Text" X="45" Y="20" Width="300" Height="15" TabSkip="no" Text="!(loc.PasswordCompareLabel)" Transparent="yes" />-->
+
+
+        <Control Id="ValidFormatBmpId" Type="Bitmap" X="20" Y="20" Width="12" Height="12" TabSkip="no" Text="FailIcon" Hidden="yes">
+          <Condition Action="show">
+            ISCREDENTIALSSUCCESS&lt;&gt;1
+          </Condition>
+        </Control>
+        <Control Id="ValidFormatLabel" Type="Text" X="45" Y="20" Width="300" Height="15" TabSkip="no" Text="!(loc.ValidFormatLabel)" Transparent="yes" >
+          <Condition Action="show" >ISCREDENTIALSSUCCESS&lt;&gt;1</Condition>
+        </Control>
+
+        <Control Id="BottomLine" Type="Line" X="0" Y="70" Width="220" Height="0" />
+
+        <Control Id="Return" Type="PushButton" X="170" Y="75" Width="40" Height="17" Default="yes" Cancel="yes" Text="!(loc.OKButtonLabel)">
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+      </Dialog>
+
+    </UI>
+  </Fragment>
+
+</Wix>

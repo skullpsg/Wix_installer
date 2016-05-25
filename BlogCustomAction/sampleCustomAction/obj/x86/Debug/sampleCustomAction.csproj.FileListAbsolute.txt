@@ -1,0 +1,7 @@
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\sampleCustomAction\bin\Debug\sampleCustomAction.dll
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\sampleCustomAction\bin\Debug\sampleCustomAction.CA.dll
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\sampleCustomAction\bin\Debug\sampleCustomAction.pdb
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\sampleCustomAction\bin\Debug\Microsoft.Deployment.WindowsInstaller.dll
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\sampleCustomAction\bin\Debug\Microsoft.Deployment.WindowsInstaller.xml
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\sampleCustomAction\obj\x86\Debug\sampleCustomAction.dll
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\sampleCustomAction\obj\x86\Debug\sampleCustomAction.pdb

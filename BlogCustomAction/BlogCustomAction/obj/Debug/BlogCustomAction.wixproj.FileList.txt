@@ -1,0 +1,8 @@
+obj\Debug\Product.wixobj
+obj\Debug\customDialog.wixobj
+obj\Debug\MyWixUI_InstallDir.wixobj
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\BlogCustomAction\bin\Debug\en-us\BlogCustomAction.msi
+c:\users\vishn_000\documents\visual studio 2013\Projects\BlogCustomAction\BlogCustomAction\bin\Debug\en-us\BlogCustomAction.wixpdb
+obj\Debug\BlogCustomAction.wixproj.BindContentsFileListen-us.txt
+obj\Debug\BlogCustomAction.wixproj.BindOutputsFileListen-us.txt
+obj\Debug\BlogCustomAction.wixproj.BindBuiltOutputsFileListen-us.txt

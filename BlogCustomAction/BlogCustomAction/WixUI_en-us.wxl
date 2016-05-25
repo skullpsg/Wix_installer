@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+
+  <String Id="OKButtonLabel"  Overridable="yes">OK</String>
+  <String Id="PasswordCompareLabel"  Overridable="yes">Password and Confirm password should match</String>
+  <String Id="UserPwdCheckLabel"  Overridable="yes">Supplied Username/Password must be valid</String>
+  <String Id="ValidationResultLabel"  Overridable="yes">Validation Result.</String>
+  <String Id="ValidFormatLabel"  Overridable="yes">UserName and Password Should be in valid format.</String>
+  
+</WixLocalization>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Product Id="3E786878-358D-43AD-82D1-1435ADF9F6EA"           Name="Awesome Software"           Language="1033"           Version="1.0.0.0"           Manufacturer="Awesome Company"           UpgradeCode="B414C827-8D81-4B4A-B3B6-338C06DE3A11">
+    <Package InstallerVersion="301"             Compressed="yes"                InstallScope="perMachine"              Manufacturer="Awesome Company"             Description="Installs Awesome Software"             Keywords="Practice,Installer,MSI"             Comments="(c) 2012 Awesome Company" />
+    <MediaTemplate EmbedCab="yes" />
+
+
+    <Binary Id="PassIcon" SourceFile="images\icon_checked.bmp"/>
+    <Binary Id="FailIcon" SourceFile="images\icon_error.bmp"/>
+    <Binary Id="WhiteBgBMP" SourceFile="images\bg.bmp"/>
+    <UIRef Id="MyWixUI_InstallDir" />
+
+    <!--this property is needed to take location result from browsedialog-->
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+
+    <Directory Id="TARGETDIR"               Name="SourceDir">
+      <Directory Id="INSTALLFOLDER"  Name="Program Files">
+        <Directory Id="SampleCustomAction"  Name="SampleCustomAction">
+          <Component Id="Component_CustomAction" Guid="{DD543780-7137-416D-B579-10E4FAA7BD28}">
+            <File Id="WixCustomActionBlogWindowService.exe" Name="WixCustomActionBlogWindowService.exe" Source="C:\Users\vishn_000\Documents\visual studio 2013\Projects\BlogCustomAction\WixCustomActionBlogWindowService\bin\Debug\WixCustomActionBlogWindowService.exe" Vital="yes" KeyPath="yes" DiskId="1"/>
+
+             <ServiceInstall Id="CustomAccountServiceInstaller1"
+                               Type="ownProcess"
+                               Vital="yes"
+                               Name="WixCustomActionBlogWindowService"
+                               DisplayName="CustomAction For Blog"
+                               Description="Sample Service Application For CustomAction."
+                               Start="auto"
+                               Account=".\[ACCOUNT]" Password="[MY_PASSWORD]"
+                               ErrorControl="normal"
+                               Interactive="no" >
+              </ServiceInstall>
+              <ServiceControl Id="StartService1"
+                               Start="install"
+                               Stop="both"
+                               Remove="uninstall"
+                               Name="WixCustomActionBlogWindowService"
+                               Wait="yes" />
+              <util:User Id="UpdateUserLogonAsService" UpdateIfExists="yes" CreateUser="no" Name="[ACCOUNT]"  Password="[MY_PASSWORD]" LogonAsService="yes" />
+              
+
+              <RemoveFolder Id="INSTALLLOCATION" On="uninstall" />
+
+              <RegistryKey Root="HKLM" Key="Software\CustomActionProject" Action="createAndRemoveOnUninstall" ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes">
+                <RegistryKey Key="CustomActionKey1" ForceDeleteOnUninstall="yes">
+                  <RegistryKey Key="CustomActionKey2" ForceDeleteOnUninstall="yes">
+                    <RegistryValue Name="CustomactionRegVal1" Value="CustomAction" Type="string" KeyPath="no"/>
+                    <RegistryValue Name="CustomactionRegVal2" Value="0" Type="string" KeyPath="no"/>
+                    <RegistryValue Name="CustomactionRegVal3" Value="0" Type="string" KeyPath="no"/>                  
+                  </RegistryKey>
+                </RegistryKey>
+              </RegistryKey>
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="ProductFeature" Title="sampleProject"  Level="1">
+      <ComponentRef Id="Component_CustomAction" />
+    </Feature>
+  </Product>
+  <Fragment>
+    <!-- Custom action.-->
+    <Property Id="DUMMYPROPERTY">Dummy</Property>
+    <Binary Id="CustomActionDll" SourceFile="C:\Users\vishn_000\Documents\visual studio 2013\Projects\BlogCustomAction\sampleCustomAction\bin\Debug\sampleCustomAction.CA.dll" />
+    <CustomAction Id="CheckingUserAvailability" BinaryKey="CustomActionDll" DllEntry="CheckingUserAvailability" Execute="immediate" />
+  </Fragment>
+</Wix>
