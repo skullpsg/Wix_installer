@@ -9,3 +9,7 @@ https://www.microsoft.com/net
 
 2) Download and install the following file: WiX Toolset v3.0. WiX is a collection of free tools that builds software installers from XML documents.
  http://wix.codeplex.com/downloads/get/119160
+ 
+ you can go here to get latest release http://wixtoolset.org/
+ 
+3) Now you can open your project in your editor tool(visual studio).
