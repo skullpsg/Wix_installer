@@ -17,5 +17,5 @@ https://www.microsoft.com/net
 4)If you face error like incompatible wile loading your project in your solution 
 
 Go here:
- VS2013:  http://stackoverflow.com/questions/19448343/enable-wix-project-in-visual-studio-2013
+ VS2013:  http://stackoverflow.com/questions/19448343/enable-wix-project-in-visual-studio-2013     
  VS2015:  http://stackoverflow.com/questions/26110643/how-to-enable-wix-projects-in-visual-studio-2015
