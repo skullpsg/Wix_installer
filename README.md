@@ -7,8 +7,8 @@ Here is what you need first:
 1) On Windows XP you might need to download and install the Microsoft .NET Framework if you have none installed on your PC. The WiX toolset requires the .NET Framework. The installation takes some time, time to get a coffee.
 https://www.microsoft.com/net
 
-2) Download and install the following file: WiX Toolset v3.0. WiX is a collection of free tools that builds software installers from XML documents.
- http://wix.codeplex.com/downloads/get/119160
+2) Download and install the following file: WiX Toolset v3.0.8. WiX is a collection of free tools that builds software installers from XML documents.
+ https://wix.codeplex.com/downloads/get/776582
  
  you can go here to get latest release http://wixtoolset.org/
  
