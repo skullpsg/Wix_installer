@@ -21,3 +21,7 @@ Go here:
  VS2015:  http://stackoverflow.com/questions/26110643/how-to-enable-wix-projects-in-visual-studio-2015    
  
  5)now close and reopen the project in solution.
+ 
+ 6)Build customAction project and change the path of custom action which is refered in product.wxs and then build wix_installer project.you can get the msi inside    
+ 
+ {referedProjectlocation}\BlogCustomAction\BlogCustomAction\bin\Debug\en-us\
